@@ -1,6 +1,6 @@
 # Do-Drone
 ### Do-Drone proto
-+ https://ovenapp.io/project/2VtwNkiRZEvzx2W57ZTWrSvuDpZIw5tP#KvOLJ
++ https://ovenapp.io/view/2VtwNkiRZEvzx2W57ZTWrSvuDpZIw5tP/ubECh
 
 ### 호걸 유튜브 채널
 + https://www.youtube.com/channel/UCUP4IStWNEei6lNwVRUca2Q
