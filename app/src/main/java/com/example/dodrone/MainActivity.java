@@ -5,17 +5,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
-import android.widget.*;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //button = (Button) findViewById(R.id.)
+        Button btn_viewChange = (Button) findViewById(R.id.btn_viewChange);
+        btn_viewChange.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent =  new Intent(getApplicationContext(), DataActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
-    
+
 }
