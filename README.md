@@ -1,17 +1,20 @@
 # Do-Drone
-### Do-Drone proto
-+ https://ovenapp.io/view/2VtwNkiRZEvzx2W57ZTWrSvuDpZIw5tP/ubECh
+## 호걸의 두드론 프로젝트!
 
 ### 호걸 유튜브 채널
 + https://www.youtube.com/channel/UCUP4IStWNEei6lNwVRUca2Q
 
-### 호걸 시현영상 링크
-+ https://youtu.be/3IVgBmttj68
-
 ### 호걸 notion 링크
 + https://www.notion.so/3fbcbdb4d4ee4c7d85809c8261e8d1b5
 
-# hoGirl project
+### Do-Drone proto
++ https://ovenapp.io/view/2VtwNkiRZEvzx2W57ZTWrSvuDpZIw5tP/ubECh
+
+### 두드론 시현영상 링크
++ https://youtu.be/3IVgBmttj68
+
+
+# Do-Drone project
 
 ### 프로젝트 레포지토리 정리
 + https://github.com/RbChoi/Verification_OpenCV : mediapipe의 hand tracking을 통한 간단한 손 검출 코드
