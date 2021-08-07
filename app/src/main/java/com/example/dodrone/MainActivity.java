@@ -16,6 +16,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //button = (Button) findViewById(R.id.)
-    }
+    } //must add SHA1 otherwise google signin will not work
     
 }
