@@ -10,12 +10,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.example.dodrone.LoginActivity;
 import com.example.dodrone.MainActivity;
 import com.example.dodrone.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-
+    /*
     //constant time delay (2500 means 2.5 sec)
     private final int SPLASH_DELAY = 2500;
 
@@ -54,6 +55,13 @@ public class SplashActivity extends AppCompatActivity {
             finish();
         }, SPLASH_DELAY);
 
+    }*/
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }
