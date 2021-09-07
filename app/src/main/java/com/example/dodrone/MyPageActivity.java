@@ -39,9 +39,10 @@ public class MyPageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //clear all previous activities
                 startActivity(intent);
 
-                finish();
+               finish();
             }
         });
     }

@@ -13,11 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".controlling.CtrlMainActivity"></activity>
-        <activity android:name=".assemble.AssemblyMainActivity" />
-        <activity android:name=".train.TrainMainActivity" />
-        <activity android:name=".DoDroneActivity" />
-        <activity android:name=".MyPageActivity" />
+
+
+        <activity
+            android:name=".controlling.CtrlMainActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".train.TrainMainActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".DoDroneActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MyPageActivity"
+            android:screenOrientation="landscape" />
         <!--
         <activity android:name=".ui.SplashActivity">
             <intent-filter>
@@ -30,6 +40,7 @@
         -->
         <activity
             android:name=".ui.SplashActivity"
+            android:screenOrientation="landscape"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,8 +48,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="landscape" />
+
+
+        <activity
+            android:name=".assemble.AssemblyMainActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".assemble.AssemStep1Activity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".assemble.AssemStep2Activity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".assemble.AssemStep3Activity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".assemble.AssemStep4Activity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".assemble.AssemStep5Activity"
+            android:screenOrientation="landscape"></activity>
+
     </application>
 
 </manifest>

@@ -26,6 +26,8 @@ public class DoDroneActivity extends AppCompatActivity {
         ctrlBtn = findViewById(R.id.ctrlBtn);
         myPage = findViewById(R.id.myPage);
 
+        ctrlBtn.setEnabled(false);
+
         assemBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +59,11 @@ public class DoDroneActivity extends AppCompatActivity {
                 startActivity(myPageIntent);
             }
         });
+
+
+
     }
+
 
 
 

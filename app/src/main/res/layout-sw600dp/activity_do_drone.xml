@@ -8,29 +8,29 @@
 
     <ImageView
         android:id="@+id/logoImg"
-        android:layout_width="287dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="327dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="72dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hori_black" />
 
     <LinearLayout
         android:id="@+id/layoutBig"
-        android:layout_width="764dp"
-        android:layout_height="284dp"
+        android:layout_width="857dp"
+        android:layout_height="338dp"
         android:layout_margin="10dp"
         android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939">
+        app:layout_constraintVertical_bias="0.718">
 
         <LinearLayout
             android:id="@+id/layoutClass"
@@ -42,12 +42,12 @@
 
             <Button
                 android:id="@+id/assemBtn"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:drawableTop="@drawable/assem_black_phone"
+                android:drawableTop="@drawable/assem_black_tab"
                 android:freezesText="true"
                 android:gravity="bottom|center"
                 android:paddingLeft="20dp"
@@ -58,14 +58,14 @@
 
             <Button
                 android:id="@+id/trainBtn"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:drawableTop="@drawable/train_black_phone"
+                android:drawableTop="@drawable/train_black_tab"
                 android:gravity="bottom|center"
-                android:paddingTop="20dp"
+                android:paddingTop="30dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="10dp"
                 android:text="학습하기"

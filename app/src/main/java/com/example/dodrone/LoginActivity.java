@@ -39,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         if (user!=null) {
             Intent intent = new Intent(getApplicationContext(), DoDroneActivity.class);
             startActivity(intent);
+
+            finish();
         }
 
 

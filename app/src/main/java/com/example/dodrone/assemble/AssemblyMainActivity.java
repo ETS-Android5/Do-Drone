@@ -2,7 +2,10 @@ package com.example.dodrone.assemble;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,7 +22,7 @@ import com.squareup.picasso.Picasso;
 import com.example.dodrone.R;
 
 public class AssemblyMainActivity extends AppCompatActivity {
-
+    Button step1, step2, step3, step4, step5;
     ImageView rImage;
 
     @Override
@@ -27,43 +30,29 @@ public class AssemblyMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assembly_main);
 
-        // getting ImageView by its id
-        rImage = findViewById(R.id.rImage);
+        step1 = findViewById(R.id.assem_step_1);
+        step2 = findViewById(R.id.assem_step_2);
+        /*step3 = findViewById(R.id.assem_step_3);
+        step4 = findViewById(R.id.assem_step_4);
+        step5 = findViewById(R.id.assem_step_5);*/
 
-        // we will get the default FirebaseDatabase instance
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-
-        // we will get a DatabaseReference for the database root node
-        DatabaseReference databaseReference = firebaseDatabase.getReference();
-
-        // Here "image" is the child node value we are getting
-        // child node data in the getImage variable
-        DatabaseReference getImage = databaseReference.child("tasung");
-
-        // Adding listener for a single change
-        // in the data at this location.
-        // this listener will triggered once
-        // with the value of the data at the location
-        getImage.addListenerForSingleValueEvent(new ValueEventListener() {
+        step1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // getting a DataSnapshot for the location at the specified
-                // relative path and getting in the link variable
-                String link = dataSnapshot.getValue(String.class);
-
-                // loading that data into rImage
-                // variable which is ImageView
-                Picasso.get().load(link).into(rImage);
-            }
-
-            // this will called when any problem
-            // occurs in getting data
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // we are showing that error message in toast
-                Toast.makeText(AssemblyMainActivity.this, "Error Loading Image", Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                Intent stepIntent = new Intent(getApplicationContext(), AssemStep1Activity.class);
+                startActivity(stepIntent);
             }
         });
+
+        step2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent stepIntent = new Intent(getApplicationContext(), AssemStep2Activity.class);
+                startActivity(stepIntent);
+            }
+        });
+
+
     }
 }
 
