@@ -71,7 +71,7 @@
             android:name=".assemble.AssemStep5Activity"
             android:screenOrientation="landscape"></activity>
 
-        </provider>
+
     </application>
 
 </manifest>
