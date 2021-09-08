@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "481807487800",
+    "project_id": "do-drone-8bea1",
+    "storage_bucket": "do-drone-8bea1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481807487800:android:a478400a3caad8a21527cd",
+        "android_client_info": {
+          "package_name": "com.example.dodrone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481807487800-fq3mqrrmvh10s4e3vjehothdrsrp8k6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu-_S34ztsS4qGkVTDBnM9JJoGshwtims"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481807487800-fq3mqrrmvh10s4e3vjehothdrsrp8k6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
