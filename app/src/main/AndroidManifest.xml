@@ -13,12 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-
-
         <activity
             android:name=".controlling.CtrlMainActivity"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".train.TrainMainActivity"
             android:screenOrientation="landscape" />
@@ -51,27 +48,27 @@
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="landscape" />
-
-
+        <activity
+            android:name=".AboutActivity"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".assemble.AssemblyMainActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".assemble.AssemStep1Activity"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".assemble.AssemStep2Activity"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".assemble.AssemStep3Activity"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".assemble.AssemStep4Activity"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".assemble.AssemStep5Activity"
-            android:screenOrientation="landscape"></activity>
-
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
