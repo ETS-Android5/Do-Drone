@@ -4,16 +4,32 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DoDrone">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
 
-        <activity android:name=".MainActivity">
+
+        <activity
+            android:name=".controlling.CtrlMainActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".train.TrainMainActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".DoDroneActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MyPageActivity"
+            android:screenOrientation="landscape" />
+        <!--
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,6 +37,40 @@
             </intent-filter>
 
         </activity>
+        -->
+        <activity
+            android:name=".ui.SplashActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="landscape" />
+
+
+        <activity
+            android:name=".assemble.AssemblyMainActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".assemble.AssemStep1Activity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".assemble.AssemStep2Activity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".assemble.AssemStep3Activity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".assemble.AssemStep4Activity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".assemble.AssemStep5Activity"
+            android:screenOrientation="landscape"></activity>
 
     </application>
 

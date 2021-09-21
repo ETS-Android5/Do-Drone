@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center|center_vertical"
+    tools:context=".assemble.AssemblyMainActivity">
+
+    <TextView
+        android:id="@+id/thisisTrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:text="학습하기"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.126" />
+
+    <HorizontalScrollView
+        android:layout_width="800dp"
+        android:layout_height="267dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thisisTrain">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/train_step_1"
+                android:layout_width="300dp"
+                android:layout_height="194dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/alan_grey"
+                android:drawableTop="@drawable/train_black_phone"
+                android:drawablePadding="20dp"
+                android:gravity="bottom|center"
+                android:padding="20dp"
+                android:text="step 1" />
+
+            <Button
+                android:id="@+id/train_step_2"
+                android:layout_width="300dp"
+                android:layout_height="194dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/alan_grey"
+                android:drawableTop="@drawable/train_black_phone"
+                android:drawablePadding="20dp"
+                android:gravity="bottom|center"
+                android:padding="20dp"
+                android:text="step 2" />
+
+            <Button
+                android:id="@+id/train_step_3"
+                android:layout_width="300dp"
+                android:layout_height="194dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/alan_grey"
+                android:drawableTop="@drawable/train_black_phone"
+                android:drawablePadding="20dp"
+                android:gravity="bottom|center"
+                android:padding="20dp"
+                android:text="step 3" />
+
+            <Button
+                android:id="@+id/train_step_4"
+                android:layout_width="300dp"
+                android:layout_height="194dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/alan_grey"
+                android:drawableTop="@drawable/train_black_phone"
+                android:drawablePadding="20dp"
+                android:gravity="bottom|center"
+                android:padding="20dp"
+                android:text="step 4" />
+
+            <Button
+                android:id="@+id/train_step_5"
+                android:layout_width="300dp"
+                android:layout_height="194dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/alan_grey"
+                android:drawableTop="@drawable/train_black_phone"
+                android:drawablePadding="20dp"
+                android:gravity="bottom|center"
+                android:padding="20dp"
+                android:text="step 5" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
