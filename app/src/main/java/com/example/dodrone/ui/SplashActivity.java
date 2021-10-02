@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.dodrone.LoginActivity;
+import com.example.dodrone.StartActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

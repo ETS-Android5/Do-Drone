@@ -21,71 +21,58 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.HashMap;
-
-public class LoginActivity extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity {
 
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
-    private FirebaseDatabase firebaseDatabase;
-    private DatabaseReference databaseReference;
 
-    private static final String TAG = "Do-Drone";
-    Button googleSignInBtn;
+    Button registerBtn;
+    Button loginBtn;
 
-    protected void onStart() {
-        super.onStart();
-
-        FirebaseUser currUser = mAuth.getCurrentUser();
-
-        updateUI(currUser);
-
-    }
-
-    private void updateUI(FirebaseUser currUser) {
-        if (currUser != null) {
-            Intent intent = new Intent(getApplicationContext(), DoDroneActivity.class);
-            startActivity(intent);
-            Toast.makeText(LoginActivity.this, "Welcome back "+currUser.getDisplayName()+".\n(Email: "+currUser.getEmail()+")", Toast.LENGTH_LONG).show();
-            Log.d(TAG, String.valueOf(currUser)+"\n"+currUser.getUid());
-        }
-    }
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_start);
+        GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
+
+        registerBtn = findViewById(R.id.registerBtn);
+        loginBtn = findViewById(R.id.loginBtn);
 
         mAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance("https://dodrone-4eebb-default-rtdb.asia-southeast1.firebasedatabase.app/");
-        databaseReference = firebaseDatabase.getReference();
+        //createRequest();
 
-        createRequest();
-        googleSignInBtn = findViewById(R.id.googleSignInBtn);
-        googleSignInBtn.setOnClickListener(new View.OnClickListener() {
+        registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mGoogleSignInClient.signOut();
-                resultLauncher.launch(new Intent(mGoogleSignInClient.getSignInIntent()));
-
+                Intent reg = new Intent(getApplicationContext(), RegisterActivity.class);
+                startActivity(reg);
             }
         });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //resultLauncher.launch(new Intent(mGoogleSignInClient.getSignInIntent()));
+                FirebaseUser user = mAuth.getCurrentUser();
+                Intent login = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(login);
+            }
+        });
+
+
+
     }
 
-    private void createRequest() {
+    /*private void createRequest() {
 
         //configure google sign in
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -128,39 +115,20 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update MyPageActivity data?
                             FirebaseUser user = mAuth.getCurrentUser();
-                            assert user!=null;
-                            HashMap<String, Object> hashMap = new HashMap<>();
-                            hashMap.put("char_num", 1);
-                            hashMap.put("nickname", "알랭 두 드롱");
-                            hashMap.put("status", 0);
-                            databaseReference.child("Users").child(user.getUid())
-                                    .setValue(hashMap)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused) {
-                                        Log.d(TAG, "New member added.");
-                                    }
-                                })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull @NotNull Exception e) {
-                                            Log.d(TAG, "Failed attempt to add new user to realtime db.");
-                                        }
-                                    });
-
                             Intent intent = new Intent(getApplicationContext(), DoDroneActivity.class);
                             startActivity(intent);
-                            Toast.makeText(LoginActivity.this, "Welcome "+user.getDisplayName()+".\n(Email: "+user.getEmail()+")", Toast.LENGTH_SHORT).show();
-
+                            Toast.makeText(StartActivity.this, "Welcome "+user.getDisplayName()+".\n(ID: "+user.getEmail()+")\n", Toast.LENGTH_LONG).show();
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithCredential:failure", task.getException());
+                            //Log.w(TAG, "signInWithCredential:failure", task.getException());
                             //updateUI(null);
-                            Toast.makeText(LoginActivity.this, "Sorry auth failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StartActivity.this, "Sorry auth failed", Toast.LENGTH_LONG).show();
 
                         }
                     }
                 });
     }
 
+    private void login() {
+    }*/
 }

@@ -1,33 +1,42 @@
 {
   "project_info": {
-    "project_number": "481807487800",
-    "project_id": "do-drone-8bea1",
-    "storage_bucket": "do-drone-8bea1.appspot.com"
+    "project_number": "83211148475",
+    "firebase_url": "https://dodrone-4eebb-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "dodrone-4eebb",
+    "storage_bucket": "dodrone-4eebb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:481807487800:android:a478400a3caad8a21527cd",
+        "mobilesdk_app_id": "1:83211148475:android:6e1e39f85c69c14ea61d9e",
         "android_client_info": {
           "package_name": "com.example.dodrone"
         }
       },
       "oauth_client": [
         {
-          "client_id": "481807487800-fq3mqrrmvh10s4e3vjehothdrsrp8k6a.apps.googleusercontent.com",
+          "client_id": "83211148475-hare3gti6ibmof0ia64krap16lc4o0ia.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dodrone",
+            "certificate_hash": "e7e1a09f1e6429ff65e41db56533e4701760703b"
+          }
+        },
+        {
+          "client_id": "83211148475-08odtqj7h2odt5h550qifvnj0mnks14c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBu-_S34ztsS4qGkVTDBnM9JJoGshwtims"
+          "current_key": "AIzaSyBDVcvhkHJN3iEDGvN-hGk2iOL07bEa4mc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "481807487800-fq3mqrrmvh10s4e3vjehothdrsrp8k6a.apps.googleusercontent.com",
+              "client_id": "83211148475-08odtqj7h2odt5h550qifvnj0mnks14c.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
