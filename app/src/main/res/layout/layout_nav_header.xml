@@ -13,30 +13,46 @@
         android:id="@+id/viewSupporter"
         android:layout_width="1dp"
         android:layout_height="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/profile_img"
-        app:layout_constraintEnd_toEndOf="@+id/profile_img"
-        app:layout_constraintStart_toStartOf="@+id/profile_img"
-        app:layout_constraintTop_toTopOf="@+id/profile_img" />
+        app:layout_constraintBottom_toBottomOf="@+id/nav_header_profile_img"
+        app:layout_constraintEnd_toEndOf="@+id/nav_header_profile_img"
+        app:layout_constraintStart_toStartOf="@+id/nav_header_profile_img"
+        app:layout_constraintTop_toTopOf="@+id/nav_header_profile_img" />
 
     <TextView
+        android:id="@+id/nav_header_nick"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:text="your nickname"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/viewSupporter"
-        app:layout_constraintStart_toEndOf="@+id/profile_img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nav_header_profile_img"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.541" />
+        app:layout_constraintVertical_bias="0.494" />
 
     <ImageView
-        android:id="@+id/profile_img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/nav_header_profile_img"
+        android:layout_width="113dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
         android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/alan_thumbs_up" />
+
+    <Button
+        android:id="@+id/closeBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_baseline_close_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

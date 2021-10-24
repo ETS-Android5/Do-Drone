@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +17,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.SignInAccount;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +31,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CountDownLatch;
 
 public class MyPageActivity extends AppCompatActivity {
 
@@ -38,62 +43,57 @@ public class MyPageActivity extends AppCompatActivity {
     String nickname;
     Integer char_num, status;
     TextView name, mail, nicknameTv, statusTv;
+    ImageView character;
     Button logoutBtn;
+    Button modifyBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_page);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser();
         logoutBtn = findViewById(R.id.logoutBtn);
         name = findViewById(R.id.name);
         mail = findViewById(R.id.mail);
         nicknameTv = findViewById(R.id.nickname);
         statusTv = findViewById(R.id.status);
+        character = findViewById(R.id.character);
+        modifyBtn = findViewById(R.id.modifyBtn);
 
-        firebaseDatabase = FirebaseDatabase.getInstance("https://dodrone-4eebb-default-rtdb.asia-southeast1.firebasedatabase.app/");
-        databaseReference = firebaseDatabase.getReference("Users");
+
+        LoginActivity.User thisUser = new LoginActivity.User();
+
+        thisUser.retrieveUserInfo(currUser, thisUser.listener);
+        Log.d("Login", "1\n" + thisUser.nickname + "/t" + thisUser.status);
+
+        //firebaseDatabase = FirebaseDatabase.getInstance("https://dodrone-4eebb-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        //databaseReference = firebaseDatabase.getReference("Users");
+        //LoginActivity.User thisUser = new LoginActivity.User();
+        //thisUser.retrieveUserInfo(currUser);
+        //if (currUser != null) uid = currUser.getUid();
+        //nickname = databaseReference.child("")
+
 
         GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
         if (signInAccount != null) {
             name.setText(signInAccount.getDisplayName());
             mail.setText(signInAccount.getEmail());
 
-            /*if (user != null)
-                Log.d(TAG, "user not null"+user.getUid());
-            else
-                Log.d(TAG, "user null");*/
-
-            if (user != null) {
-                uid = user.getUid();
-                Log.d(TAG, "uid: "+user.getUid());
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot snapshot) {
-                        for (DataSnapshot child : snapshot.getChildren()) {
-                            //Log.d(TAG, (String) child.getKey());
-                            if (child.getKey().equals(uid)) {
-                                //Log.d(TAG, "found it!!!!!!!!!!11");
-                                nickname = (String) child.child("nickname").getValue();
-                                char_num = Integer.parseInt(String.valueOf(child.child("char_num").getValue()));
-                                status = Integer.parseInt(String.valueOf(child.child("status").getValue()));
-
-                                nicknameTv.setText(nickname);
-                                statusTv.setText(status.toString());
-                                //Log.d(TAG, nickname+"\t"+char_num+"\t"+status);
-                                break;
-                            }
-                        }
+            thisUser.dbRef.child("Users").child(currUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull @NotNull Task<DataSnapshot> task) {
+                    if (!task.isSuccessful())
+                        Log.d("User-class", "Error getting data", task.getException());
+                    else {
+                        nicknameTv.setText(task.getResult().child("nickname").getValue().toString());
+                        statusTv.setText(task.getResult().child("status").getValue().toString());
+                        int tmp = Integer.parseInt(task.getResult().child("char_num").getValue().toString());
+                        character.setImageDrawable(user_char(tmp));
                     }
 
-                    @Override
-                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
-                    }
-                });
-            }
-
+                }
+            });
         }
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +107,26 @@ public class MyPageActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        modifyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ModifyUserInfoActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
+
+    public Drawable user_char(int char_num) {
+        Drawable char_draw = null;
+        if (char_num == 0)
+            char_draw = getResources().getDrawable(R.drawable.alan_hat);
+        else if (char_num == 1)
+            char_draw = getResources().getDrawable(R.drawable.tom_hat);
+
+        return char_draw;
+    }
+
 }
 

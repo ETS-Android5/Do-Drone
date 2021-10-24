@@ -1,4 +1,4 @@
-package com.example.dodrone.assemble;
+package com.example.dodrone.train;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,33 +15,31 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
-public class AssemStep2Activity extends AppCompatActivity {
-    private static int STATUS_NUM2 = 2;
-    Button nextStep2;
+public class TrainStep2Activity extends AppCompatActivity {
+    private static int STATUS_NUM7 = 7;
+    Button nextStep7;
     FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser();
     LoginActivity.User thisUser = new LoginActivity.User();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("stack", "assem_2");
+        Log.d("stack", "train_2");
 
-        setContentView(R.layout.activity_assem_step2);
-        ArrayList<String> userInfo = new ArrayList<>();
-        thisUser.retrieveUserInfo(currUser);
+        setContentView(R.layout.activity_train_step2);
+        thisUser.retrieveUserInfo(currUser, thisUser.listener);
 
-
-        nextStep2 = findViewById(R.id.nextStep_2);
-        nextStep2.setOnClickListener(new View.OnClickListener() {
+        nextStep7 = findViewById(R.id.nextStep_7);
+        nextStep7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), AssemStep3Activity.class);
+                Intent intent = new Intent(getApplicationContext(), TrainStep3Activity.class);
                 //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 //intent.putExtra("EXIT", true);
                 startActivity(intent);
                 //finishAffinity();
                 finish();
-                thisUser.updateStatus(STATUS_NUM2);
+                thisUser.updateStatus(STATUS_NUM7);
 
 
             }

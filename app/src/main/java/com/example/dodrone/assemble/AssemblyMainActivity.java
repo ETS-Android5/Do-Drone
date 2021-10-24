@@ -32,9 +32,48 @@ public class AssemblyMainActivity extends AppCompatActivity {
 
         step1 = findViewById(R.id.assem_step_1);
         step2 = findViewById(R.id.assem_step_2);
-        /*step3 = findViewById(R.id.assem_step_3);
+        step3 = findViewById(R.id.assem_step_3);
         step4 = findViewById(R.id.assem_step_4);
-        step5 = findViewById(R.id.assem_step_5);*/
+        step5 = findViewById(R.id.assem_step_5);
+
+        /*Button.OnClickListener onClickListener = new Button.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent stepIntent;
+                switch (v.getId()) {
+                    case R.id.assem_step_1:
+                        stepIntent = new Intent(getApplicationContext(), AssemStep1Activity.class);
+                        startActivity(stepIntent);
+                        break;
+                    case R.id.assem_step_2:
+                        stepIntent = new Intent(getApplicationContext(), AssemStep2Activity.class);
+                        startActivity(stepIntent);
+                        break;
+                    case R.id.assem_step_3:
+                        stepIntent = new Intent(getApplicationContext(), AssemStep3Activity.class);
+                        startActivity(stepIntent);
+                        break;
+                    case R.id.assem_step_4:
+                        stepIntent = new Intent(getApplicationContext(), AssemStep4Activity.class);
+                        startActivity(stepIntent);
+                        break;
+                    case R.id.assem_step_5:
+                        stepIntent = new Intent(getApplicationContext(), AssemStep5Activity.class);
+                        startActivity(stepIntent);
+                        break;
+
+                }
+            }
+        };
+
+        step1.setOnClickListener(onClickListener);
+        step2.setOnClickListener(onClickListener);
+        step3.setOnClickListener(onClickListener);
+        step4.setOnClickListener(onClickListener);
+        step5.setOnClickListener(onClickListener);*/
+
+
 
         step1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +87,30 @@ public class AssemblyMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent stepIntent = new Intent(getApplicationContext(), AssemStep2Activity.class);
+                startActivity(stepIntent);
+            }
+        });
+
+        step3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent stepIntent = new Intent(getApplicationContext(), AssemStep3Activity.class);
+                startActivity(stepIntent);
+            }
+        });
+
+        step4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent stepIntent = new Intent(getApplicationContext(), AssemStep4Activity.class);
+                startActivity(stepIntent);
+            }
+        });
+
+        step5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent stepIntent = new Intent(getApplicationContext(), AssemStep5Activity.class);
                 startActivity(stepIntent);
             }
         });
