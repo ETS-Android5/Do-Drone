@@ -1,3 +1,17 @@
+10/26-28
+✅1. AndroidManifest.xml, build.gradle(:app) CameraX 사용 위한 코드 추가
+2. activity_ctrl_main.xml - (✅previewView, battery, droneCameraView, speed/altitude btn, record/kill connection btn)
+3. DoDroneActivity.java 수정(1) - LoginActivity.java에서 getExtra로 User 정보 받아오는 부분 Thread 처리로 먼저 처리되게
+(ctrlBtn 활성화 시키기)
+4. DoDroneActivity.java 수정(2) - 새로고침 버튼 눌렀을 때 status 값 업데이트되게
+5. 각 조립하기, 학습하기 페이지 상단바 뒤로가기 추가 + drawer 추가
+
+6. CtrlMainActivity.java(1) - access permission
+7. CtrlMainActivity.java(2) - 아두이노 연결(와이파이 선택,)
+8. C:/AndroidStudio/Camera 에서 FilePath 문제 해결, PreviewView 저장
+9.
+
+
 firebase 변수 추가해야 하는 거
 -user info (**학습진도상황**, 캐릭터 선택, 닉네임)
 
