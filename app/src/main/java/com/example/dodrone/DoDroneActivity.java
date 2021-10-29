@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -52,7 +53,7 @@ public class DoDroneActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_do_drone);
 
-        stat = getIntent().getIntExtra("stat", 0);
+        stat = getIntent().getIntExtra("stat", -1);
         nickname = getIntent().getStringExtra("nickname");
         char_num = getIntent().getIntExtra("char_num", 0);
         Log.d("user-class", "intent val: "+stat);
@@ -74,7 +75,7 @@ public class DoDroneActivity extends AppCompatActivity{
         //LoginActivity.User thisUser = new LoginActivity.User();
         //thisUser.retrieveUserInfo(currUser, thisUser.listener);
 
-        //ctrlBtn.setEnabled(ctrlEnable(stat));
+        ctrlBtn.setEnabled(false);
         //Log.d("user-class", "stat: "+stat+" \nctrlEnable result "+ctrlEnable(stat));
 
         refreshBtn.setOnClickListener(new View.OnClickListener() {
@@ -101,14 +102,19 @@ public class DoDroneActivity extends AppCompatActivity{
             }
         });
 
-        ctrlBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Intent ctrlIntent = new Intent(getApplicationContext(), CtrlMainActivity.class);
-                //startActivity(ctrlIntent);
-                droneAlert(this);
-            }
-        });
+        Handler handler = new Handler();
+
+        if (stat != -1) {
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ctrlButton();
+                }
+            }, 3000);
+        }
+
+
+
 
 
 
@@ -135,6 +141,18 @@ public class DoDroneActivity extends AppCompatActivity{
         navigationView.setItemIconTintList(null);
     }
 
+    private void ctrlButton(){
+
+        ctrlBtn.setEnabled(ctrlEnable(stat));
+        ctrlBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent ctrlIntent = new Intent(getApplicationContext(), CtrlMainActivity.class);
+                //startActivity(ctrlIntent);
+                droneAlert(this);
+            }
+        });
+    }
     public boolean menuOnclick(MenuItem item) {
         int id= item.getItemId();
         if (id==R.id.nav_home) {
