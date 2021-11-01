@@ -1,4 +1,4 @@
-package com.example.dodrone.assemble;
+package com.example.dodrone.train;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,34 +13,33 @@ import com.example.dodrone.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.ArrayList;
-
-public class AssemStep3Activity extends AppCompatActivity {
-    private static int STATUS_NUM3 = 3;
-    Button nextStep3;
+public class TrainStep1Activity extends AppCompatActivity {
+    private static int STATUS_NUM6 = 6;
+    Button nextStep6;
     FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser();
     LoginActivity.User thisUser = new LoginActivity.User();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("stack", "assem_3");
-        setContentView(R.layout.activity_assem_step3);
-        //thisUser.retrieveUserInfo(currUser);
+        Log.d("stack", "assem_1");
+        setContentView(R.layout.activity_train_step1);
 
-        ArrayList<String> userInfo = new ArrayList<>();
         thisUser.retrieveUserInfo(currUser, thisUser.listener);
-        nextStep3 = findViewById(R.id.nextStep_3);
-        nextStep3.setOnClickListener(new View.OnClickListener() {
+
+        nextStep6 = findViewById(R.id.nextStep_6);
+        nextStep6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), AssemStep4Activity.class);
+                Intent intent = new Intent(getApplicationContext(), TrainStep2Activity.class);
                 //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 //intent.putExtra("EXIT", true);
                 startActivity(intent);
-                //finish();
-                finishAffinity();
-                thisUser.updateStatus(STATUS_NUM3);
+                finish();
+                //finishAffinity();
+
+
+                thisUser.updateStatus(STATUS_NUM6);
+
 
             }
         });
