@@ -39,9 +39,9 @@ android {
         mlModelBinding true
     }
     //4.1이후 부터는 tflite 필요 없음
-//    aaptOptions {
-//        noCompress "tflite"
-//    }
+    /*aaptOptions {
+        noCompress "tflite"
+    }*/
 }
 
 dependencies {
