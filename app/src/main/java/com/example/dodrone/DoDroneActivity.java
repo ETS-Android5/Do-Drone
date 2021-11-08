@@ -75,16 +75,9 @@ public class DoDroneActivity extends AppCompatActivity{
         //LoginActivity.User thisUser = new LoginActivity.User();
         //thisUser.retrieveUserInfo(currUser, thisUser.listener);
 
-        ctrlBtn.setEnabled(false);
+        //ctrlBtn.setEnabled(false);
         //Log.d("user-class", "stat: "+stat+" \nctrlEnable result "+ctrlEnable(stat));
 
-        refreshBtn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                refreshPage();
-            }
-        });
 
         assemBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,20 +95,11 @@ public class DoDroneActivity extends AppCompatActivity{
             }
         });
 
-        Handler handler = new Handler();
-
-        if (stat != -1) {
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    ctrlButton();
-                }
-            }, 3000);
-        }
 
 
 
 
+        ctrlButton();
 
 
         //navigation 설정
@@ -143,7 +127,7 @@ public class DoDroneActivity extends AppCompatActivity{
 
     private void ctrlButton(){
 
-        ctrlBtn.setEnabled(ctrlEnable(stat));
+        //ctrlBtn.setEnabled(ctrlEnable(stat));
         ctrlBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -187,22 +171,7 @@ public class DoDroneActivity extends AppCompatActivity{
 
 
 
-    private void refreshPage() {
-        LoginActivity.User refreshUser = new LoginActivity.User();
-        refreshUser.retrieveUserInfo(currUser, refreshUser.listener);
-        nickname = refreshUser.nickname;
-        stat = refreshUser.status;
-        char_num = refreshUser.char_num;
-        Log.d("user-class", nickname+" "+stat+" "+char_num);
 
-        Intent refresh = new Intent(getApplicationContext(), DoDroneActivity.class);
-        refresh.putExtra("stat", stat);
-        refresh.putExtra("nickname", nickname);
-        refresh.putExtra("char_num", char_num);
-        //refresh.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(refresh);
-        //finish();
-    }
 
     //드론 연결하기
     public void droneAlert(View.OnClickListener view) {

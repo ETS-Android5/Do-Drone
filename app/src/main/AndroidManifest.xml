@@ -95,6 +95,8 @@
             android:name=".train.TrainStep5Activity"
             android:screenOrientation="landscape" />
 
+
+
     </application>
 
 </manifest>
