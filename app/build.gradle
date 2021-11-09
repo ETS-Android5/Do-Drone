@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId "com.example.dodrone"
         //tflite 사용하려면 최소 19이상
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -73,7 +73,7 @@ dependencies {
 
 
     // Also declare the dependency for the TensorFlow Lite library and specify its version
-    implementation 'org.tensorflow:tensorflow-lite:2.3.0'
+    implementation 'org.tensorflow:tensorflow-lite:2.4.0'
 
     //add for tensorflow lite
     implementation 'org.tensorflow:tensorflow-lite-task-vision:0.2.0'

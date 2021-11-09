@@ -94,7 +94,7 @@ public class DoDroneActivity extends AppCompatActivity{
         trainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent trainIntent = new Intent(getApplicationContext(), TrainMainActivity.class);
+                Intent trainIntent = new Intent(getApplicationContext(), CtrlMainActivity.class);
                 startActivity(trainIntent);
             }
         });

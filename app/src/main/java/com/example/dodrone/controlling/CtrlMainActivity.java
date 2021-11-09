@@ -3,8 +3,9 @@ package com.example.dodrone.controlling;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.graphics.Camera;
 import android.os.ParcelFileDescriptor;
-import com.google.android.odml.image.MLImage;
+//import com.google.android.odml.image.MLImage;
 
 import android.os.Bundle;
 import android.view.View;
@@ -35,30 +36,31 @@ public class CtrlMainActivity extends AppCompatActivity {
     private static final int OPTIONAL_FD_LENGTH = -1;
     private static final int OPTIONAL_FD_OFFSET = -1;
 
+    private Camera mCamera;
+
+
     // Initialize interpreter with GPU delegate
     Model.Options options;
     CompatibilityList compatList = new CompatibilityList();
-
-    if(compatList.isDelegateSupportedOnThisDevice()){
-        // if the device has a supported GPU, add the GPU delegate
-        options = new Model.Options.Builder().setDevice(Model.Device.GPU).build();
-    } //else {
-        // if the GPU is not supported, run on 4 threads
-        //options = new Model.Options.Builder().setNumThreads(4).build();
-    //}
-
-    //MyModel myModel = new MyModel.newInstance(context, options);
-
-    // Run inference per sample code
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ctrl_main);
 
-
+        // Create an instance of Camera
+        mCamera = getCameraInstance();
     }
-
+    
+    public static Camera getCameraInstance(){
+        Camera c = null;
+        try {
+            c = Camera.open(); // attempt to get a Camera instance
+        }
+        catch (Exception e){
+            // Camera is not available (in use or does not exist)
+        }
+        return c; // returns null if camera is unavailable
+    }
 }
 
