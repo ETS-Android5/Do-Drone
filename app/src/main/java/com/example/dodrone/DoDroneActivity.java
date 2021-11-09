@@ -2,15 +2,18 @@ package com.example.dodrone;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -50,7 +53,7 @@ public class DoDroneActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_do_drone);
 
-        stat = getIntent().getIntExtra("stat", 0);
+        stat = getIntent().getIntExtra("stat", -1);
         nickname = getIntent().getStringExtra("nickname");
         char_num = getIntent().getIntExtra("char_num", 0);
         Log.d("user-class", "intent val: "+stat);
@@ -72,16 +75,9 @@ public class DoDroneActivity extends AppCompatActivity{
         //LoginActivity.User thisUser = new LoginActivity.User();
         //thisUser.retrieveUserInfo(currUser, thisUser.listener);
 
-        ctrlBtn.setEnabled(ctrlEnable(stat));
-        Log.d("user-class", "stat: "+stat+" \nctrlEnable result "+ctrlEnable(stat));
+        //ctrlBtn.setEnabled(false);
+        //Log.d("user-class", "stat: "+stat+" \nctrlEnable result "+ctrlEnable(stat));
 
-        refreshBtn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                refreshPage();
-            }
-        });
 
         assemBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,14 +95,11 @@ public class DoDroneActivity extends AppCompatActivity{
             }
         });
 
-        ctrlBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent ctrlIntent = new Intent(getApplicationContext(), CtrlMainActivity.class);
-                startActivity(ctrlIntent);
-            }
-        });
 
+
+
+
+        ctrlButton();
 
 
         //navigation 설정
@@ -132,6 +125,18 @@ public class DoDroneActivity extends AppCompatActivity{
         navigationView.setItemIconTintList(null);
     }
 
+    private void ctrlButton(){
+
+        //ctrlBtn.setEnabled(ctrlEnable(stat));
+        ctrlBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent ctrlIntent = new Intent(getApplicationContext(), CtrlMainActivity.class);
+                //startActivity(ctrlIntent);
+                droneAlert(this);
+            }
+        });
+    }
     public boolean menuOnclick(MenuItem item) {
         int id= item.getItemId();
         if (id==R.id.nav_home) {
@@ -166,20 +171,34 @@ public class DoDroneActivity extends AppCompatActivity{
 
 
 
-    private void refreshPage() {
-        LoginActivity.User refreshUser = new LoginActivity.User();
-        refreshUser.retrieveUserInfo(currUser, refreshUser.listener);
-        nickname = refreshUser.nickname;
-        stat = refreshUser.status;
-        char_num = refreshUser.char_num;
-        Log.d("user-class", nickname+" "+stat+" "+char_num);
 
-        Intent refresh = new Intent(getApplicationContext(), DoDroneActivity.class);
-        refresh.putExtra("stat", stat);
-        refresh.putExtra("nickname", nickname);
-        refresh.putExtra("char_num", char_num);
-        //refresh.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(refresh);
-        finish();
+
+    //드론 연결하기
+    public void droneAlert(View.OnClickListener view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("드론을 연결하시겠습니까?");
+        builder.setPositiveButton("네", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Log.d("ctrl-alert", "ok clicked");
+                // 드론 연결 - 와이파이 선택 창
+                Intent intent = new Intent(getApplicationContext(), CtrlMainActivity .class);
+                startActivity(intent);
+            }
+        });
+
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), "홈으로 돌아갑니다.", Toast.LENGTH_SHORT).show();
+                //Intent intent = new Intent(getApplicationContext(), DoDroneActivity.class);
+                //startActivity(intent);
+                //finish();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
+
 }
