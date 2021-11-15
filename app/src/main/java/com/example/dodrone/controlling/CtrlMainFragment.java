@@ -25,6 +25,8 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
 import java.net.InetAddress;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -91,7 +93,7 @@ public class CtrlMainFragment extends Fragment  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        new Thread(new Client()).start();
         //previewView = findViewById(R.id.previewView);
         //batteryPer = findViewById(R.id.batteryPer);
 
@@ -121,7 +123,45 @@ public class CtrlMainFragment extends Fragment  {
         //float batteryPct = level * 100 / (float)scale;
 
     }
+    class Client implements Runnable {
+        public static final String SERVERIP = "192.168.35.215";
+        //IP주소는 매번 바뀔수있으니까 수정필요 (SERVERIP)
+        public static final int SERVERPORT = 1234;
+        //public static final String SERVERIP = "192.168.4.1";
+        //public static final int SERVERPORT = 1234;
+        @Override
+        public void run() {
+            // TODO Auto-generated method stub
+            System.out.println("dddddddd");
+            try {
+                // Retrieve the ServerName
+                InetAddress serverAddr = InetAddress.getByName(SERVERIP);
 
+                Log.d("UDP", "C: Connecting...");
+                /* Create new UDP-Socket */
+                DatagramSocket socket = new DatagramSocket();
+
+                /* Prepare some data to be sent. */
+                byte[] buf = ("A").getBytes();
+
+                /* Create UDP-packet with
+                 * data & destination(url+port) */
+                DatagramPacket packet = new DatagramPacket(buf, buf.length, serverAddr,SERVERPORT);
+                Log.d("UDP", "C: Sending: '" + new String(buf) + "'");
+
+                /* Send out the packet */
+                socket.send(packet);
+                Log.d("UDP", "C: Sent.");
+                Log.d("UDP", "C: Done.");
+
+                socket.receive(packet);
+                Log.d("UDP", "C: Received: '" + new String(packet.getData()) + "'");
+
+            } catch (Exception e) {
+                Log.e("UDP", "C: Error", e);
+            }
+        }
+    }
     /*
     public void onWindowFocusChanged(){
         int testW = mTrackingOverlay.getWidth();
