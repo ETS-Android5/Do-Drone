@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="alan_grey">#CECECE</color>
     <color name="dodrone_org">#FF4308</color>
+    <color name="background">#292A2D</color>
 </resources>
