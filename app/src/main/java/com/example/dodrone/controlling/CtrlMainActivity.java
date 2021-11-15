@@ -39,6 +39,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
+import org.tensorflow.lite.Interpreter;
+
 import android.util.Size;
 import android.graphics.Point;
 import android.content.res.AssetManager;
@@ -60,6 +62,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 
+//tflite
+import com.google.firebase.database.annotations.NotNull;
+import com.google.firebase.ml.modeldownloader.CustomModelDownloadConditions;
+import com.google.firebase.ml.modeldownloader.FirebaseModelDownloader;
+import com.google.firebase.ml.modeldownloader.*;
+import com.google.firebase.ml.modeldownloader.CustomModel;
+import com.google.firebase.ml.modeldownloader.DownloadType;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.mlkit.vision.objects.defaults.ObjectDetectorOptions;
+
+import java.io.File;
+
+
 
 public class CtrlMainActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener{
     private static final String TAG = "MainActivity";
@@ -75,16 +90,12 @@ public class CtrlMainActivity extends AppCompatActivity implements FragmentManag
     private static final int OPTIONAL_FD_LENGTH = -1;
     private static final int OPTIONAL_FD_OFFSET = -1;
 
-    private Camera mCamera;
 
-
-    // Initialize interpreter with GPU delegate
-    Model.Options options;
-    CompatibilityList compatList = new CompatibilityList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.v("tag", "Creating Success");
         setContentView(R.layout.activity_ctrl_main);
         //Toolbar toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
@@ -95,6 +106,33 @@ public class CtrlMainActivity extends AppCompatActivity implements FragmentManag
             getSupportFragmentManager().beginTransaction().add(R.id.fragment, cameraFragment, "camera").commit();
         else
             onBackStackChanged();
+
+        CustomModelDownloadConditions conditions = new CustomModelDownloadConditions.Builder()
+                .requireWifi()
+                .build();
+        FirebaseModelDownloader.getInstance()
+                .getModel("Hand-Detector", DownloadType.LOCAL_MODEL, conditions)
+                .addOnSuccessListener(new OnSuccessListener<CustomModel>() {
+                    @Override
+                    public void onSuccess(CustomModel model) {
+                        // Download complete. Depending on your app, you could enable
+                        // the ML feature, or switch from the local model to the remote
+                        // model, etc.
+                        File modelFile = model.getFile();
+                        if(modelFile != null){
+                            //interpreter = new Interpreter(modelFile);
+                        }
+                    }
+                });
+
+
+
+        // Initialization
+        //ObjectDetectorOptions options = ObjectDetectorOptions.builder()
+        //        .setScoreThreshold(0)  // Evaluate your model in the Google Cloud Console
+                // to determine an appropriate value.
+        //        .build();
+        //ObjectDetector objectDetector = ObjectDetector.createFromFileAndOptions(context, modelFile, options);
     }
 
     /*
@@ -124,4 +162,6 @@ public class CtrlMainActivity extends AppCompatActivity implements FragmentManag
 //        mMenu = menu;
 //        return true;
 //    }
+
+
 }
