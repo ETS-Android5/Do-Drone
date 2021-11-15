@@ -95,12 +95,7 @@ public class DoDroneActivity extends AppCompatActivity{
             }
         });
 
-
-
-
-
         ctrlButton();
-
 
         //navigation 설정
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
