@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-package com.p4f.esp32camai.tflite;
+package com.example.dodrone.tflite;
 
 import android.graphics.Bitmap;
 

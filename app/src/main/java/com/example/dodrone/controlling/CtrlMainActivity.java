@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.RectF;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,7 +40,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
-import org.tensorflow.lite.Interpreter;
+
 
 import android.util.Size;
 import android.graphics.Point;
@@ -71,7 +72,10 @@ import com.google.firebase.ml.modeldownloader.CustomModel;
 import com.google.firebase.ml.modeldownloader.DownloadType;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.mlkit.vision.objects.defaults.ObjectDetectorOptions;
-
+import com.example.dodrone.ml.V1Model;
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
+import org.tensorflow.lite.Interpreter;
+import org.tensorflow.lite.support.image.TensorImage;
 import java.io.File;
 
 
@@ -107,6 +111,7 @@ public class CtrlMainActivity extends AppCompatActivity implements FragmentManag
         else
             onBackStackChanged();
 
+
         CustomModelDownloadConditions conditions = new CustomModelDownloadConditions.Builder()
                 .requireWifi()
                 .build();
@@ -124,6 +129,34 @@ public class CtrlMainActivity extends AppCompatActivity implements FragmentManag
                         }
                     }
                 });
+
+
+        try {
+            V1Model model = V1Model.newInstance(context);
+
+            // Creates inputs for reference.
+            TensorImage image = TensorImage.fromBitmap(bitmap);
+
+            // Runs model inference and gets result.
+            V1Model.Outputs outputs = model.process(image);
+            V1Model.DetectionResult detectionResult = outputs.getDetectionResultList().get(0);
+
+            // Gets result from DetectionResult.
+            RectF location = detectionResult.getLocationAsRectF();
+            String category = detectionResult.getCategoryAsString();
+            float score = detectionResult.getScoreAsFloat();
+
+            // Releases model resources if no longer used.
+            model.close();
+        } catch (IOException e) {
+            // TODO Handle the exception
+        }
+        // Initialization
+        //ObjectDetectorOptions options = ObjectDetectorOptions.builder().setMaxResults(1).build();
+        //ObjectDetector objectDetector = ObjectDetector.createFromFileAndOptions(context, modelFile, options);
+
+        // Run inference
+        //List<Detection> results = objectDetector.detect(image);
 
 
 
