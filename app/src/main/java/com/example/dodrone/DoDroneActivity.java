@@ -75,7 +75,7 @@ public class DoDroneActivity extends AppCompatActivity{
         //LoginActivity.User thisUser = new LoginActivity.User();
         //thisUser.retrieveUserInfo(currUser, thisUser.listener);
 
-        ctrlBtn.setEnabled(false);
+        //ctrlBtn.setEnabled(false);
         //Log.d("user-class", "stat: "+stat+" \nctrlEnable result "+ctrlEnable(stat));
 
         refreshBtn.setOnClickListener(new View.OnClickListener() {
@@ -102,18 +102,7 @@ public class DoDroneActivity extends AppCompatActivity{
             }
         });
 
-        Handler handler = new Handler();
-
-        if (stat != -1) {
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    ctrlButton();
-                }
-            }, 3000);
-        }
-
-
+        ctrlButton();
 
 
 
@@ -143,7 +132,7 @@ public class DoDroneActivity extends AppCompatActivity{
 
     private void ctrlButton(){
 
-        ctrlBtn.setEnabled(ctrlEnable(stat));
+        //ctrlBtn.setEnabled(ctrlEnable(stat));
         ctrlBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
