@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     android:paddingTop="10dp"
     tools:context=".ModifyUserInfoActivity">
 
@@ -13,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/modTitle"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:fontFamily="@font/hyundai_b"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +56,8 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:text="@string/authName"
-                    android:textColor="#ED292929"
+                    android:fontFamily="@font/hyundai_m"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -65,7 +68,8 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:text="@string/authEmail"
-                    android:textColor="#ED292929"
+                    android:fontFamily="@font/hyundai_m"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -75,7 +79,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/nickTv"
-                    android:textColor="#ED292929"
+                    android:fontFamily="@font/hyundai_m"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -95,8 +100,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/hyundai_m"
                     android:text="@string/authName"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
                 <TextView
@@ -106,7 +112,8 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:text="@string/authEmail"
-                    android:textColor="@color/black"
+                    android:fontFamily="@font/hyundai_m"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
                 <EditText
@@ -115,7 +122,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/nickTv"
-                    android:textColor="@color/black"
+                    android:fontFamily="@font/hyundai_m"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -130,32 +138,39 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:text="@string/charSel"
+            android:fontFamily="@font/hyundai_m"
             android:textColor="#ED292929"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <RadioGroup
-            android:checkedButton="@+id/charSel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checkedButton="@+id/charSel"
             android:orientation="horizontal">
 
 
-                <RadioButton
-                    android:id="@+id/radioAlan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="rbClick"
-                    android:text="@string/alan" />
+            <RadioButton
+                android:id="@+id/radioAlan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/white"
+                android:onClick="rbClick"
+                android:fontFamily="@font/hyundai_m"
+                android:text="@string/alan"
+                android:textColor="@color/white" />
 
-                <RadioButton
-                    android:id="@+id/radioTom"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="rbClick"
-                    android:text="@string/tom" />
+            <RadioButton
+                android:id="@+id/radioTom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/white"
+                android:onClick="rbClick"
+                android:fontFamily="@font/hyundai_m"
+                android:text="@string/tom"
+                android:textColor="@color/white" />
 
 
         </RadioGroup>
@@ -185,6 +200,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:fontFamily="@font/hyundai_m"
             android:text="@string/saveBtn" />
 
     </LinearLayout>
