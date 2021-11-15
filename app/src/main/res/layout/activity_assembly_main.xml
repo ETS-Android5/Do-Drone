@@ -5,15 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center|center_vertical"
+    android:background="@color/background"
     tools:context=".assemble.AssemblyMainActivity">
 
     <TextView
         android:id="@+id/thisisAssem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/hyundai_m"
         android:gravity="center|top"
         android:text="조립하기"
-        android:textSize="34sp"
+        android:textColor="@color/white"
+        android:textSize="54sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,6 +24,7 @@
         app:layout_constraintVertical_bias="0.126" />
 
     <HorizontalScrollView
+        android:background="@color/background"
         android:layout_width="800dp"
         android:layout_height="267dp"
         android:layout_marginStart="10dp"
@@ -36,6 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/thisisAssem">
 
         <LinearLayout
+            android:background="@color/background"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
@@ -47,12 +52,14 @@
                 android:layout_height="194dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@color/alan_grey"
-                android:drawableTop="@drawable/assem_black_phone"
+                android:background="@color/background"
+                android:drawableTop="@drawable/zorip"
                 android:drawablePadding="20dp"
+                android:fontFamily="@font/hyundai_m"
                 android:gravity="bottom|center"
                 android:padding="20dp"
-                android:text="step 1" />
+                android:text="step 1"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/assem_step_2"
@@ -60,12 +67,14 @@
                 android:layout_height="194dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@color/alan_grey"
+                android:backgroundTint="@color/white"
                 android:drawableTop="@drawable/assem_black_phone"
                 android:drawablePadding="20dp"
+                android:fontFamily="@font/hyundai_m"
                 android:gravity="bottom|center"
                 android:padding="20dp"
-                android:text="step 2" />
+                android:text="step 2"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/assem_step_3"
@@ -73,12 +82,15 @@
                 android:layout_height="194dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@color/alan_grey"
+                android:background="@color/background"
+                android:backgroundTint="@color/white"
                 android:drawableTop="@drawable/assem_black_phone"
                 android:drawablePadding="20dp"
+                android:fontFamily="@font/hyundai_m"
                 android:gravity="bottom|center"
                 android:padding="20dp"
-                android:text="step 3" />
+                android:text="step 3"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/assem_step_4"
@@ -89,9 +101,11 @@
                 android:background="@color/alan_grey"
                 android:drawableTop="@drawable/assem_black_phone"
                 android:drawablePadding="20dp"
+                android:fontFamily="@font/hyundai_m"
                 android:gravity="bottom|center"
                 android:padding="20dp"
-                android:text="step 4" />
+                android:text="step 4"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/assem_step_5"
@@ -102,9 +116,11 @@
                 android:background="@color/alan_grey"
                 android:drawableTop="@drawable/assem_black_phone"
                 android:drawablePadding="20dp"
+                android:fontFamily="@font/hyundai_m"
                 android:gravity="bottom|center"
                 android:padding="20dp"
-                android:text="step 5" />
+                android:text="step 5"
+                android:textSize="20sp" />
 
         </LinearLayout>
     </HorizontalScrollView>

@@ -124,7 +124,7 @@ public class CtrlMainFragment extends Fragment  {
 
     }
     class Client implements Runnable {
-        public static final String SERVERIP = "192.168.35.215";
+        public static final String SERVERIP = "192.168.202.91";
         //IP주소는 매번 바뀔수있으니까 수정필요 (SERVERIP)
         public static final int SERVERPORT = 1234;
         //public static final String SERVERIP = "192.168.4.1";
@@ -142,7 +142,7 @@ public class CtrlMainFragment extends Fragment  {
                 DatagramSocket socket = new DatagramSocket();
 
                 /* Prepare some data to be sent. */
-                byte[] buf = ("A").getBytes();
+                byte[] buf = ("B").getBytes();
 
                 /* Create UDP-packet with
                  * data & destination(url+port) */

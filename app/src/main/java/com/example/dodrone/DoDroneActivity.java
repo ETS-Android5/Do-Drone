@@ -38,7 +38,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class DoDroneActivity extends AppCompatActivity{
 
-    Button assemBtn, trainBtn, ctrlBtn, refreshBtn;
+    Button assemBtn, trainBtn, ctrlBtn;
     ImageView profile_img;
     TextView profile_nick;
     String nickname;
@@ -64,7 +64,6 @@ public class DoDroneActivity extends AppCompatActivity{
         stat = thisUser.status;
         char_num = thisUser.char_num;*/
 
-        refreshBtn = findViewById(R.id.refreshBtn);
         assemBtn = findViewById(R.id.assemBtn);
         trainBtn = findViewById(R.id.trainBtn);
         ctrlBtn = findViewById(R.id.ctrlBtn);
