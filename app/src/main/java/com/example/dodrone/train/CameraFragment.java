@@ -55,7 +55,7 @@ public class CameraFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_camera, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_camera_train, container, false);
         index = Integer.parseInt(getArguments().get("index").toString());
         Log.d("whatswrong", "ha "+index);
 
