@@ -45,6 +45,7 @@ public class DoDroneActivity extends AppCompatActivity{
     int char_num;
     int stat;
     FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser();
+    User thisUser = new User();
 
 
     @Override
@@ -58,11 +59,6 @@ public class DoDroneActivity extends AppCompatActivity{
         char_num = getIntent().getIntExtra("char_num", 0);
         Log.d("user-class", "intent val: "+stat);
 
-        /*LoginActivity.User thisUser = new LoginActivity.User();
-        thisUser.retrieveUserInfo(currUser,thisUser.listener);
-        nickname = thisUser.nickname;
-        stat = thisUser.status;
-        char_num = thisUser.char_num;*/
 
         assemBtn = findViewById(R.id.assemBtn);
         trainBtn = findViewById(R.id.trainBtn);
@@ -70,12 +66,6 @@ public class DoDroneActivity extends AppCompatActivity{
         profile_img = findViewById(R.id.nav_header_profile_img);
         profile_nick = findViewById(R.id.nav_header_nick);
 
-        //FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser();
-        //LoginActivity.User thisUser = new LoginActivity.User();
-        //thisUser.retrieveUserInfo(currUser, thisUser.listener);
-
-        //ctrlBtn.setEnabled(false);
-        //Log.d("user-class", "stat: "+stat+" \nctrlEnable result "+ctrlEnable(stat));
 
 
         assemBtn.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +126,7 @@ public class DoDroneActivity extends AppCompatActivity{
             }
         });
     }
+
     public boolean menuOnclick(MenuItem item) {
         int id= item.getItemId();
         if (id==R.id.nav_home) {
