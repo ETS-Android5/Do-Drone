@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.example.dodrone.LoginActivity;
 import com.example.dodrone.R;
+import com.example.dodrone.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -19,7 +20,7 @@ public class AssemStep1Activity extends AppCompatActivity {
     private static int STATUS_NUM1 = 1;
     Button nextStep1;
     FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser();
-    LoginActivity.User thisUser = new LoginActivity.User();
+    User thisUser = new User();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

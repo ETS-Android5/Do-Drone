@@ -8,7 +8,7 @@
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/activity_about.xml" value="0.1" />
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/activity_assem_step1.xml" value="0.1" />
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/activity_assem_step3.xml" value="0.11639492753623189" />
-        <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/activity_assembly_main.xml" value="0.335" />
+        <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/activity_assembly_main.xml" value="0.25" />
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/activity_ctrl_main.xml" value="0.15185185185185185" />
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/activity_do_drone.xml" value="0.165" />
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/activity_login.xml" value="0.1453804347826087" />
@@ -16,10 +16,12 @@
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/activity_my_page.xml" value="0.25" />
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/activity_photo.xml" value="0.11639492753623189" />
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/activity_process.xml" value="0.11639492753623189" />
+        <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/activity_train_main.xml" value="0.1" />
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/assemble_image.xml" value="0.1" />
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/fragment_camera.xml" value="0.1390625" />
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/layout_nav_header.xml" value="0.15715579710144928" />
         <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/layout/text.xml" value="0.2972222222222222" />
+        <entry key="..\:/Users/ioolv/OneDrive/Do-Drone/app/src/main/res/menu/nav_menu.xml" value="0.14722222222222223" />
       </map>
     </option>
   </component>

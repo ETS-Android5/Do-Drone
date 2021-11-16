@@ -62,7 +62,7 @@ public class MyPageActivity extends AppCompatActivity {
         modifyBtn = findViewById(R.id.modifyBtn);
 
 
-        LoginActivity.User thisUser = new LoginActivity.User();
+        User thisUser = new User();
 
         thisUser.retrieveUserInfo(currUser, thisUser.listener);
         Log.d("Login", "1\n" + thisUser.nickname + "/t" + thisUser.status);

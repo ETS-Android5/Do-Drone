@@ -11,20 +11,20 @@
     <TextView
         android:id="@+id/modTitle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_height="34dp"
+        android:fontFamily="@font/hyundai_b"
         android:text="@string/modTitle"
         android:textColor="@color/white"
-        android:fontFamily="@font/hyundai_b"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/modBig"/>
 
     <LinearLayout
         android:id="@+id/modBig"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -55,8 +55,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:text="@string/authName"
                     android:fontFamily="@font/hyundai_m"
+                    android:text="@string/authName"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -67,8 +67,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:text="@string/authEmail"
                     android:fontFamily="@font/hyundai_m"
+                    android:text="@string/authEmail"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -78,8 +78,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/nickTv"
                     android:fontFamily="@font/hyundai_m"
+                    android:text="@string/nickTv"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -111,8 +111,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:text="@string/authEmail"
                     android:fontFamily="@font/hyundai_m"
+                    android:text="@string/authEmail"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
@@ -121,8 +121,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/nickTv"
                     android:fontFamily="@font/hyundai_m"
+                    android:text="@string/nickTv"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -137,8 +137,8 @@
             android:layout_gravity="left"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:text="@string/charSel"
             android:fontFamily="@font/hyundai_m"
+            android:text="@string/charSel"
             android:textColor="#ED292929"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -156,8 +156,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:buttonTint="@color/white"
-                android:onClick="rbClick"
                 android:fontFamily="@font/hyundai_m"
+                android:onClick="rbClick"
                 android:text="@string/alan"
                 android:textColor="@color/white" />
 
@@ -167,8 +167,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:buttonTint="@color/white"
-                android:onClick="rbClick"
                 android:fontFamily="@font/hyundai_m"
+                android:onClick="rbClick"
                 android:text="@string/tom"
                 android:textColor="@color/white" />
 
@@ -199,8 +199,8 @@
             android:id="@+id/saveBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:fontFamily="@font/hyundai_m"
+            android:padding="10dp"
             android:text="@string/saveBtn" />
 
     </LinearLayout>
