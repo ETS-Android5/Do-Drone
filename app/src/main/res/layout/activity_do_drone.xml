@@ -115,7 +115,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_menu_24"
-            tools:srcCompat="@drawable/ic_baseline_menu_24" />
+            tools:srcCompat="@drawable/ic_baseline_menu_24"
+            android:fontFamily="@font/hyundai_b"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

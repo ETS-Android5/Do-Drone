@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.dodrone.DoDroneActivity;
 import com.example.dodrone.LoginActivity;
 import com.example.dodrone.R;
+import com.example.dodrone.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -28,7 +29,7 @@ public class AssemStep5Activity extends AppCompatActivity {
         setContentView(R.layout.activity_assem_step5);
 
 
-        LoginActivity.User thisUser = new LoginActivity.User();
+        User thisUser = new User();
         thisUser.retrieveUserInfo(currUser, thisUser.listener);
 
 
