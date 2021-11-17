@@ -169,8 +169,8 @@ public class DoDroneActivity extends AppCompatActivity{
             public void onClick(DialogInterface dialog, int which) {
                 Log.d("ctrl-alert", "ok clicked");
                 // 드론 연결 - 와이파이 선택 창
-                // 조종하기 페이
-                Intent intent = new Intent(getApplicationContext(), DetectorActivity .class);
+                // 조종하기 page
+                Intent intent = new Intent(getApplicationContext(), CtrlMainActivity .class);
                 startActivity(intent);
             }
         });
