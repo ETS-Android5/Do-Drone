@@ -131,7 +131,7 @@ public class CtrlMainActivity extends AppCompatActivity implements FragmentManag
                 });
 
 
-        try {
+        /*try {
             V1Model model = V1Model.newInstance(context);
 
             // Creates inputs for reference.
@@ -150,7 +150,7 @@ public class CtrlMainActivity extends AppCompatActivity implements FragmentManag
             model.close();
         } catch (IOException e) {
             // TODO Handle the exception
-        }
+        }*/
         // Initialization
         //ObjectDetectorOptions options = ObjectDetectorOptions.builder().setMaxResults(1).build();
         //ObjectDetector objectDetector = ObjectDetector.createFromFileAndOptions(context, modelFile, options);

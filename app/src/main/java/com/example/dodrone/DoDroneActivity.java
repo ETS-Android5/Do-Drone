@@ -28,6 +28,7 @@ import android.widget.Toolbar;
 
 import com.example.dodrone.assemble.AssemblyMainActivity;
 import com.example.dodrone.controlling.CtrlMainActivity;
+import com.example.dodrone.DetectorActivity;
 import com.example.dodrone.train.TrainMainActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.material.navigation.NavigationView;
@@ -79,7 +80,7 @@ public class DoDroneActivity extends AppCompatActivity{
         trainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent trainIntent = new Intent(getApplicationContext(), CtrlMainActivity.class);
+                Intent trainIntent = new Intent(getApplicationContext(), TrainMainActivity.class);
                 startActivity(trainIntent);
             }
         });
@@ -112,6 +113,7 @@ public class DoDroneActivity extends AppCompatActivity{
     private void ctrlButton(){
 
         //ctrlBtn.setEnabled(ctrlEnable(stat));
+        //조종하기 page
         ctrlBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,7 +169,8 @@ public class DoDroneActivity extends AppCompatActivity{
             public void onClick(DialogInterface dialog, int which) {
                 Log.d("ctrl-alert", "ok clicked");
                 // 드론 연결 - 와이파이 선택 창
-                Intent intent = new Intent(getApplicationContext(), CtrlMainActivity .class);
+                // 조종하기 페이
+                Intent intent = new Intent(getApplicationContext(), DetectorActivity .class);
                 startActivity(intent);
             }
         });
