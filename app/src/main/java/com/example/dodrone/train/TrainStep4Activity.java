@@ -29,7 +29,7 @@ public class TrainStep4Activity extends AppCompatActivity implements FragmentMan
     private static int STATUS_NUM9 = 9;
     Button nextStep9;
     FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser();
-    LoginActivity.User thisUser = new LoginActivity.User();
+    User thisUser = new User();
     RecyclerView recyclerView;
     ArrayList<Column> columnArrayList;
     MyAdapter myAdapter;
