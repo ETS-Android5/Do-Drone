@@ -73,7 +73,7 @@ public class CtrlMainFragment extends Fragment  {
     private String mServerExactAddress;
     private boolean mStream = false;
 
-    private final Size CamResolution = new Size(640, 480);
+    private final Size CamResolution = new Size(1000, 840);
 
     private OverlayView mTrackingOverlay;
     private Bitmap mBitmapDebug;
