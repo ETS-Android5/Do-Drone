@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DoDrone</string>
+    <string name="app_name">두드론</string>
     <string name="nav_home">홈</string>
     <string name="nav_myPage">마이페이지</string>
     <string name="nav_caution">드론 주행 시 유의사항</string>

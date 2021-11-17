@@ -124,7 +124,7 @@ public class CtrlMainFragment extends Fragment  {
 
     }
     class Client implements Runnable {
-        public static final String SERVERIP = "192.168.202.91";
+        public static final String SERVERIP = "192.168.254.107";
         //IP주소는 매번 바뀔수있으니까 수정필요 (SERVERIP)
         public static final int SERVERPORT = 1234;
         //public static final String SERVERIP = "192.168.4.1";
@@ -132,7 +132,7 @@ public class CtrlMainFragment extends Fragment  {
         @Override
         public void run() {
             // TODO Auto-generated method stub
-            System.out.println("dddddddd");
+            Log.d("streamBtn", "button clicked");
             try {
                 // Retrieve the ServerName
                 InetAddress serverAddr = InetAddress.getByName(SERVERIP);
@@ -194,7 +194,6 @@ public class CtrlMainFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_camera, parent, false);
         previewView = (PreviewView) rootView.findViewById(R.id.previewView);
-        batteryPer = (TextView) rootView.findViewById(R.id.batteryPer);
         mServerImageView = (ImageView)rootView.findViewById(R.id.droneView);
         Button streamBtn = (Button) rootView.findViewById(R.id.streamBtn);
         cameraProviderFuture = ProcessCameraProvider.getInstance(getActivity());
@@ -302,10 +301,11 @@ public class CtrlMainFragment extends Fragment  {
                         }
                         int viewWidth = mServerImageView.getWidth();
                         Matrix matrix = new Matrix();
-                        matrix.postRotate(90);
+                        matrix.postRotate(0);
                         final Bitmap bmp_traspose = Bitmap.createBitmap(bmp, 0, 0, bmp.getWidth(), bmp.getHeight(), matrix, true );
                         float imagRatio = (float)bmp_traspose.getHeight()/(float)bmp_traspose.getWidth();
                         int dispViewH = (int)(viewWidth*imagRatio);
+                        Log.d("streamBtn", "imgRatio: "+imagRatio+"\ndispViewH: "+dispViewH);
                         mServerImageView.setImageBitmap(Bitmap.createScaledBitmap(bmp_traspose, viewWidth, dispViewH, false));
 
                         mBitmapGrab = bmp;
