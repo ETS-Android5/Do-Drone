@@ -33,10 +33,6 @@
 
 ### 핵심 기술
 1. 손
-2. 모바일
-3. 드론
-
-1. 손
 + 사용 모델 : SSD MobileNet V2 FPNLite 320x320
 + 속도와 정확도 모두 평균 이상의 성능을 보이는 SSD 모델을 채택하여 손 인식 코드를 구현하였다.
 + 총 7개의 클래스의 이미지들을 LabelImg를 이용하여 레이블 작업을 하였다.
@@ -52,10 +48,10 @@
 + WiFi 라우터를 통해 ESP32, ESP32-CAM, 모바이 기기가 연결된다.
 + Latency를 최소화하기 위해 UDP 통신을 진행한다. 
 
-<img width="90%" alt="motor" src="https://user-images.githubusercontent.com/60884739/142752759-472d0fbc-f122-4c44-8987-5cd044fcf6fc.png">
+<img width="70%" alt="motor" src="https://user-images.githubusercontent.com/60884739/142752759-472d0fbc-f122-4c44-8987-5cd044fcf6fc.png">
 
 ### 시스템 구조
-<img width="90%" alt="그림1" src="https://user-images.githubusercontent.com/60884739/142752619-16b47ecd-9cdc-4cdb-8a55-f84fc5ee2cf0.png">
+<img width="70%" alt="그림1" src="https://user-images.githubusercontent.com/60884739/142752619-16b47ecd-9cdc-4cdb-8a55-f84fc5ee2cf0.png">
 
 ### 프로젝트 핵심 기술
 1. 양질의 학습 사진 수집
