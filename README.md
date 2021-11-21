@@ -32,6 +32,7 @@
 추가적으로 비행 시 장애물 탐지 기술을 이용하여 예상치 못한 경우에 드론 착륙 기능 등을 제공하여 안전성을 높이고자 한다. 
 
 ### 핵심 기술
+
 1. 손
 + 사용 모델 : SSD MobileNet V2 FPNLite 320x320
 + 속도와 정확도 모두 평균 이상의 성능을 보이는 SSD 모델을 채택하여 손 인식 코드를 구현하였다.
@@ -68,4 +69,4 @@
 
 
 --------------
-<img width="20%" alt="logo" src="https://user-images.githubusercontent.com/60884739/120488805-12369100-c3f2-11eb-8a40-c97b0fd4d81e.png">
+<img width="10%" alt="logo" src="https://user-images.githubusercontent.com/60884739/120488805-12369100-c3f2-11eb-8a40-c97b0fd4d81e.png">
