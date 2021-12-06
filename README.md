@@ -46,14 +46,14 @@
 + ESP32 보드를 장착한 아두이노 드론
 + INPUT 값에 따라 모터 속도를 변경하여 방향을 제어한다.
 + ESP32-CAM을 통해 비행 시 주변 환경을 촬영한다.
-+ WiFi 라우터를 통해 ESP32, ESP32-CAM, 모바이 기기가 연결된다.
++ WiFi 라우터를 통해 ESP32, ESP32-CAM, 모바일 기기가 연결된다.
 + Latency를 최소화하기 위해 UDP 통신을 진행한다. 
 
 <img width="40%" alt="motor" src="https://user-images.githubusercontent.com/60884739/142752759-472d0fbc-f122-4c44-8987-5cd044fcf6fc.png">
 
 ### 시스템 구조
 
-<img width="40%" alt="그림1" src="https://user-images.githubusercontent.com/60884739/142752619-16b47ecd-9cdc-4cdb-8a55-f84fc5ee2cf0.png">
+<img width="60%" alt="그림1" src="https://user-images.githubusercontent.com/60884739/142752619-16b47ecd-9cdc-4cdb-8a55-f84fc5ee2cf0.png">
 
 
 ### 프로젝트 핵심 기술
