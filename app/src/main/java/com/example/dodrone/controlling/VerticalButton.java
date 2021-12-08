@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.widget.Button;
 
-public class VerticalButton extends Button{
+public class VerticalButton extends androidx.appcompat.widget.AppCompatButton{
     final boolean topDown;
 
     public VerticalButton(Context context, AttributeSet attrs){

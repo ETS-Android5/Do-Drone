@@ -44,6 +44,9 @@ android {
     aaptOptions {
         noCompress "tflite"
     }
+    dataBinding {
+        enabled = true
+    }
 
 }
 // import DownloadModels task
