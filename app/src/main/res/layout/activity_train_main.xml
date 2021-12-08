@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center|center_vertical"
+    android:background="@color/background"
+    tools:context=".assemble.AssemblyMainActivity">
+
+    <TextView
+        android:id="@+id/thisisTrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hyundai_m"
+        android:gravity="center|top"
+        android:text="학습하기"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.126" />
+
+    <HorizontalScrollView
+        android:layout_width="800dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/background"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thisisTrain">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/train_step_1"
+                android:layout_width="300dp"
+                android:layout_height="180dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/background"
+                android:drawableTop="@drawable/white_train_tab_small"
+                android:fontFamily="@font/hyundai_m"
+                android:gravity="bottom|center"
+                android:padding="20dp"
+                android:shadowColor="#ED1717"
+                android:text="step 1"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/train_step_2"
+                android:layout_width="300dp"
+                android:layout_height="180dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/background"
+                android:drawableTop="@drawable/white_train_tab_small"
+                android:fontFamily="@font/hyundai_m"
+                android:gravity="bottom|center"
+                android:padding="20dp"
+                android:shadowColor="#ED1717"
+                android:text="step 2"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/train_step_3"
+                android:layout_width="300dp"
+                android:layout_height="180dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/background"
+                android:drawableTop="@drawable/white_train_tab_small"
+                android:fontFamily="@font/hyundai_m"
+                android:gravity="bottom|center"
+                android:padding="20dp"
+                android:shadowColor="#ED1717"
+                android:text="step 3"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/train_step_4"
+                android:layout_width="300dp"
+                android:layout_height="180dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/background"
+                android:drawableTop="@drawable/white_train_tab_small"
+                android:fontFamily="@font/hyundai_m"
+                android:gravity="bottom|center"
+                android:padding="20dp"
+                android:shadowColor="#ED1717"
+                android:text="step 4"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/train_step_5"
+                android:layout_width="300dp"
+                android:layout_height="180dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/background"
+                android:drawableTop="@drawable/white_train_tab_small"
+                android:fontFamily="@font/hyundai_m"
+                android:gravity="bottom|center"
+                android:padding="20dp"
+                android:shadowColor="#ED1717"
+                android:text="step 5"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
