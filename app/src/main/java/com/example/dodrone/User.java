@@ -22,9 +22,14 @@ public class User {
     public OnGetDataListener listener;
     private int tmp;
     private int flag = 0;
+    public OnUserDataListener userDataListener;
 
     public User() {
 
+    }
+
+    public User(OnUserDataListener listener) {
+        this.userDataListener = listener;
     }
 
     public User(String nickname, int char_num, int status) {
@@ -57,7 +62,6 @@ public class User {
     }
 
     public void retrieveUserInfo(FirebaseUser user, final OnGetDataListener listener) {
-        //listener.onStart();
         int fllag = 0;
         if (user != null) {
             uid = user.getUid();
@@ -89,12 +93,51 @@ public class User {
 
     }
 
+
+    public void retrieveUserInfoForDoDrone(FirebaseUser user, final OnGetDataListener listener, final OnUserDataListener userListener) {
+        int fllag = 0;
+        if (user != null) {
+            uid = user.getUid();
+            this.userDataListener = userListener;
+            readData(dbRef.child("Users").child(uid), new OnGetDataListener() {
+
+                @Override
+                public void onSuccess(DataSnapshot dataSnapshot) {
+                    userDataListener.getUserDataStart();
+                    Log.d("user-class", "listener onSuccess");
+                    nickname = dataSnapshot.child("nickname").getValue().toString();
+                    char_num = Integer.parseInt(dataSnapshot.child("char_num").getValue().toString());
+                    status = Integer.parseInt(dataSnapshot.child("status").getValue().toString());
+                    Log.d("user-class successful", nickname + " " + char_num + " " + status);
+
+                }
+
+                @Override
+                public void onStart() {
+                    Log.d("user-class", "listener onStart");
+                }
+
+                @Override
+                public void onFailure() {userDataListener.getUserDataDone();
+                }
+
+            });
+        }
+
+
+
+    }
+
+
     public void readData(DatabaseReference dbRef, final OnGetDataListener listener) {
         listener.onStart();
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                Log.d("user-class", "readData onDataChange start");
                 listener.onSuccess(snapshot);
+                Log.d("user-class","readData onDataChange end");
+                listener.onFailure();
             }
 
             @Override

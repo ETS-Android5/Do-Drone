@@ -47,6 +47,20 @@ public class DoDroneActivity extends AppCompatActivity{
     int stat;
     FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser();
     User thisUser = new User();
+    OnGetDataListener dataListener;
+    private OnUserDataListener userListener = new OnUserDataListener() {
+        @Override
+        public void getUserDataStart() {
+
+            Log.d("user-class", "getting user data started");
+        }
+
+        @Override
+        public void getUserDataDone() {
+            Log.d("user-class", "user data retrieved");
+            setUI();
+        }
+    };
 
 
     @Override
@@ -54,20 +68,11 @@ public class DoDroneActivity extends AppCompatActivity{
         Log.d("User-class", "do drone activity start");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_do_drone);
-
-        stat = getIntent().getIntExtra("stat", -1);
-        nickname = getIntent().getStringExtra("nickname");
-        char_num = getIntent().getIntExtra("char_num", 0);
+        thisUser.retrieveUserInfoForDoDrone(currUser, thisUser.listener, userListener);
         Log.d("user-class", "intent val: "+stat);
-
-
         assemBtn = findViewById(R.id.assemBtn);
         trainBtn = findViewById(R.id.trainBtn);
         ctrlBtn = findViewById(R.id.ctrlBtn);
-        profile_img = findViewById(R.id.nav_header_profile_img);
-        profile_nick = findViewById(R.id.nav_header_nick);
-
-
 
         assemBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +89,22 @@ public class DoDroneActivity extends AppCompatActivity{
                 startActivity(trainIntent);
             }
         });
+
+
+
+
+    }
+
+    private void setUI() {
+
+
+
+        profile_img = findViewById(R.id.nav_header_profile_img);
+        profile_nick = findViewById(R.id.nav_header_nick);
+
+
+
+
 
         ctrlButton();
 
@@ -104,8 +125,8 @@ public class DoDroneActivity extends AppCompatActivity{
             }
         });*/
 
-        //profile_img.setImageDrawable(profileChar(char_num));
-        //profile_nick.setText(nickname);
+        profile_img.setImageDrawable(profileChar(thisUser.char_num));
+        profile_nick.setText(thisUser.nickname);
         NavigationView navigationView = findViewById(R.id.navView);
         navigationView.setItemIconTintList(null);
     }

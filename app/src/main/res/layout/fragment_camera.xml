@@ -34,18 +34,18 @@
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:layout_gravity="bottom|right"
-            app:layout_constraintStart_toEndOf="@id/droneView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <Button
             android:id="@+id/streamBtn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_margin="10dp"
             android:layout_width="100dp"
-            android:layout_height="80dp"/>
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/streamvid"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

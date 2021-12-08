@@ -67,18 +67,10 @@ public class LoginActivity extends AppCompatActivity{
         //thisUser.retrieveUserInfo(currUser);
 
         if (currUser != null) {
-            thisUser.retrieveUserInfo(currUser, thisUser.listener);
             Intent intent = new Intent(getApplicationContext(), DoDroneActivity.class);
             //intent.putExtra(EXTRA_MESSAGE, thisUser.status );
             //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.putExtra("stat", thisUser.status);
-            intent.putExtra("nickname", thisUser.nickname);
-            intent.putExtra("char_num", thisUser.char_num);
             startActivity(intent);
-            Toast.makeText(LoginActivity.this, "Welcome back "+currUser.getDisplayName()+".\n(Email: "+currUser.getEmail()+")", Toast.LENGTH_LONG).show();
-            Log.d(TAG, "updateUI "+String.valueOf(currUser)+"\n"+currUser.getUid());
-
-
             finish();
         }
 

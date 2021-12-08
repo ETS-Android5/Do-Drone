@@ -122,12 +122,16 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/navView"
+        android:layout_gravity="end"
+        android:background="#B3151515"
         app:headerLayout="@layout/layout_nav_header"
-        app:menu="@menu/nav_menu"
-        android:layout_gravity="end"/>
+        app:itemShapeFillColor="#FFFFFF"
+        app:itemTextAppearance="@font/hyundai_m"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/nav_menu" />
 
 
 
