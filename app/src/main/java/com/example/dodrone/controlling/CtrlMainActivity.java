@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.RectF;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +40,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
+
+
 import android.util.Size;
 import android.graphics.Point;
 import android.content.res.AssetManager;
@@ -60,6 +63,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 
+//tflite
+import com.google.firebase.database.annotations.NotNull;
+import com.google.firebase.ml.modeldownloader.CustomModelDownloadConditions;
+import com.google.firebase.ml.modeldownloader.FirebaseModelDownloader;
+import com.google.firebase.ml.modeldownloader.*;
+import com.google.firebase.ml.modeldownloader.CustomModel;
+import com.google.firebase.ml.modeldownloader.DownloadType;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.mlkit.vision.objects.defaults.ObjectDetectorOptions;
+import com.example.dodrone.ml.V1Model;
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
+import org.tensorflow.lite.Interpreter;
+import org.tensorflow.lite.support.image.TensorImage;
+import java.io.File;
+
+
 
 public class CtrlMainActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener{
     private static final String TAG = "MainActivity";
@@ -71,9 +90,16 @@ public class CtrlMainActivity extends AppCompatActivity implements FragmentManag
     private Menu mMenu = null;
     CtrlMainFragment cameraFragment;
 
+    private static final String OBJECT_DETECTOR_NATIVE_LIB = "task_vision_jni";
+    private static final int OPTIONAL_FD_LENGTH = -1;
+    private static final int OPTIONAL_FD_OFFSET = -1;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.v("tag", "Creating Success");
         setContentView(R.layout.activity_ctrl_main);
         //Toolbar toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
@@ -84,6 +110,62 @@ public class CtrlMainActivity extends AppCompatActivity implements FragmentManag
             getSupportFragmentManager().beginTransaction().add(R.id.fragment, cameraFragment, "camera").commit();
         else
             onBackStackChanged();
+
+
+        CustomModelDownloadConditions conditions = new CustomModelDownloadConditions.Builder()
+                .requireWifi()
+                .build();
+        FirebaseModelDownloader.getInstance()
+                .getModel("Hand-Detector", DownloadType.LOCAL_MODEL, conditions)
+                .addOnSuccessListener(new OnSuccessListener<CustomModel>() {
+                    @Override
+                    public void onSuccess(CustomModel model) {
+                        // Download complete. Depending on your app, you could enable
+                        // the ML feature, or switch from the local model to the remote
+                        // model, etc.
+                        File modelFile = model.getFile();
+                        if(modelFile != null){
+                            //interpreter = new Interpreter(modelFile);
+                        }
+                    }
+                });
+
+
+        /*try {
+            V1Model model = V1Model.newInstance(context);
+
+            // Creates inputs for reference.
+            TensorImage image = TensorImage.fromBitmap(bitmap);
+
+            // Runs model inference and gets result.
+            V1Model.Outputs outputs = model.process(image);
+            V1Model.DetectionResult detectionResult = outputs.getDetectionResultList().get(0);
+
+            // Gets result from DetectionResult.
+            RectF location = detectionResult.getLocationAsRectF();
+            String category = detectionResult.getCategoryAsString();
+            float score = detectionResult.getScoreAsFloat();
+
+            // Releases model resources if no longer used.
+            model.close();
+        } catch (IOException e) {
+            // TODO Handle the exception
+        }*/
+        // Initialization
+        //ObjectDetectorOptions options = ObjectDetectorOptions.builder().setMaxResults(1).build();
+        //ObjectDetector objectDetector = ObjectDetector.createFromFileAndOptions(context, modelFile, options);
+
+        // Run inference
+        //List<Detection> results = objectDetector.detect(image);
+
+
+
+        // Initialization
+        //ObjectDetectorOptions options = ObjectDetectorOptions.builder()
+        //        .setScoreThreshold(0)  // Evaluate your model in the Google Cloud Console
+                // to determine an appropriate value.
+        //        .build();
+        //ObjectDetector objectDetector = ObjectDetector.createFromFileAndOptions(context, modelFile, options);
     }
 
     /*
@@ -113,4 +195,6 @@ public class CtrlMainActivity extends AppCompatActivity implements FragmentManag
 //        mMenu = menu;
 //        return true;
 //    }
+
+
 }

@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\AndroidProject\objectDetection_android\lite\examples\object_detection\android\lib_task_api\src\main\jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\AndroidProject\objectDetection_android\lite\examples\object_detection\android\lib_task_api\src\debug\jniLibs"/></dataSet></merger>
+=======
+<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/rayun/AndroidStudioProjects/DoDrone/lib_task_api/src/main/jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/rayun/AndroidStudioProjects/DoDrone/lib_task_api/src/debug/jniLibs"/></dataSet></merger>
+>>>>>>> d340e2212a9928ccdb37f3c16ad0a65b5b6a7e25

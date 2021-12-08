@@ -1,5 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
 3    package="org.tensorflow.lite.examples.detection.tflite"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
@@ -11,3 +12,14 @@
 9-->C:\AndroidProject\objectDetection_android\lite\examples\object_detection\android\lib_task_api\src\main\AndroidManifest.xml
 10
 11</manifest>
+=======
+3    package="org.tensorflow.lite.examples.detection.tflite" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="21"
+6-->/Users/rayun/AndroidStudioProjects/DoDrone/lib_task_api/src/main/AndroidManifest.xml
+7        android:targetSdkVersion="30" />
+7-->/Users/rayun/AndroidStudioProjects/DoDrone/lib_task_api/src/main/AndroidManifest.xml
+8
+9</manifest>
+>>>>>>> d340e2212a9928ccdb37f3c16ad0a65b5b6a7e25
