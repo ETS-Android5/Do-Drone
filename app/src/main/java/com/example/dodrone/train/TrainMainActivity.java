@@ -18,11 +18,11 @@ public class TrainMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_train_main);
 
-        step6 = findViewById(R.id.train_step_1);
-        step7 = findViewById(R.id.train_step_2);
-        step8 = findViewById(R.id.train_step_3);
-        step9 = findViewById(R.id.train_step_4);
-        step10 = findViewById(R.id.train_step_5);
+        step6 = (Button) findViewById(R.id.train_step_1);
+        step7 = (Button)findViewById(R.id.train_step_2);
+        step8 = (Button)findViewById(R.id.train_step_3);
+        step9 = (Button)findViewById(R.id.train_step_4);
+        step10 = (Button)findViewById(R.id.train_step_5);
 
         step6.setOnClickListener(new View.OnClickListener() {
             @Override
