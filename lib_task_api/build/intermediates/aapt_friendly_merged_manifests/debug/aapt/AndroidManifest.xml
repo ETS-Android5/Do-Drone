@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
-    package="org.tensorflow.lite.examples.detection.tflite"
-    android:versionCode="1"
-    android:versionName="1.0" >
-=======
     package="org.tensorflow.lite.examples.detection.tflite" >
->>>>>>> d340e2212a9928ccdb37f3c16ad0a65b5b6a7e25
 
     <uses-sdk
         android:minSdkVersion="21"

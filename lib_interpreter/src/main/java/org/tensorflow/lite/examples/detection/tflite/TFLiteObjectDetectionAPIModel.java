@@ -17,10 +17,7 @@ package org.tensorflow.lite.examples.detection.tflite;
 
 import static java.lang.Math.min;
 
-<<<<<<< HEAD
-=======
 import android.annotation.SuppressLint;
->>>>>>> d340e2212a9928ccdb37f3c16ad0a65b5b6a7e25
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
