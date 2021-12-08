@@ -38,6 +38,7 @@ import com.example.dodrone.customview.AutoFitTextureView;
 import com.example.dodrone.env.ImageUtils;
 import com.example.dodrone.env.Logger;
 
+@SuppressLint("ValidFragment")
 public class LegacyCameraConnectionFragment extends Fragment {
     private static final Logger LOGGER = new Logger();
     /** Conversion from screen rotation to JPEG orientation. */
