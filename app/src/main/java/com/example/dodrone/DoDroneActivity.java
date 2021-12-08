@@ -68,21 +68,11 @@ public class DoDroneActivity extends AppCompatActivity{
         Log.d("User-class", "do drone activity start");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_do_drone);
-
-        Log.d("user-class", "intent val: "+stat);
-
         thisUser.retrieveUserInfoForDoDrone(currUser, thisUser.listener, userListener);
-
-    }
-
-    private void setUI() {
+        Log.d("user-class", "intent val: "+stat);
         assemBtn = findViewById(R.id.assemBtn);
         trainBtn = findViewById(R.id.trainBtn);
         ctrlBtn = findViewById(R.id.ctrlBtn);
-        profile_img = findViewById(R.id.nav_header_profile_img);
-        profile_nick = findViewById(R.id.nav_header_nick);
-
-
 
         assemBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +89,22 @@ public class DoDroneActivity extends AppCompatActivity{
                 startActivity(trainIntent);
             }
         });
+
+
+
+
+    }
+
+    private void setUI() {
+
+
+
+        profile_img = findViewById(R.id.nav_header_profile_img);
+        profile_nick = findViewById(R.id.nav_header_nick);
+
+
+
+
 
         ctrlButton();
 
