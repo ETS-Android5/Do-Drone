@@ -22,7 +22,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/main_4_" />
+            app:srcCompat="@drawable/dodronebg" />
 
 
         <LinearLayout
@@ -54,7 +54,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/strokebtn"
                     android:freezesText="true"
                     android:gravity="bottom|center"
                     android:paddingLeft="20dp"
@@ -68,7 +68,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/strokebtn"
                     android:gravity="bottom|center"
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"

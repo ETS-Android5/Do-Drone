@@ -12,38 +12,29 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background">
-
-        <ImageView
-            android:id="@+id/issac"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/main_4_" />
+        android:background="@drawable/dodronebg">
 
 
         <LinearLayout
             android:id="@+id/layoutBig"
             android:layout_width="0dp"
-            android:layout_height="400dp"
+            android:layout_height="360dp"
             android:layout_margin="10dp"
 
             android:orientation="horizontal"
-            android:padding="20dp"
+            android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.694">
+            app:layout_constraintVertical_bias="0.812">
 
             <LinearLayout
                 android:id="@+id/layoutClass"
-                android:layout_width="match_parent"
+                android:layout_width="1000dp"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="100dp"
+                android:layout_marginHorizontal="20dp"
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:padding="20dp">
@@ -52,9 +43,9 @@
                     android:id="@+id/assemBtn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/strokebtn"
                     android:freezesText="true"
                     android:gravity="bottom|center"
                     android:paddingLeft="20dp"
@@ -66,9 +57,9 @@
                     android:id="@+id/trainBtn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/strokebtn"
                     android:gravity="bottom|center"
                     android:paddingTop="20dp"
                     android:paddingRight="20dp"
@@ -109,13 +100,13 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
             android:backgroundTint="#FFFFFF"
+            android:fontFamily="@font/hyundai_b"
             android:src="@drawable/ic_baseline_menu_24"
-            app:tint="#EFE1E1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_menu_24"
-            tools:srcCompat="@drawable/ic_baseline_menu_24"
-            android:fontFamily="@font/hyundai_b"/>
+            app:tint="#EFE1E1"
+            tools:srcCompat="@drawable/ic_baseline_menu_24" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
