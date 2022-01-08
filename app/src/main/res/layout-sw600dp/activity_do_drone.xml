@@ -163,7 +163,7 @@
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/hyundai_m"
             android:text="by XXKD"
-            android:textColor="#DFDED8"
+            android:textColor="@color/msg_colour"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="@+id/logo1"
             app:layout_constraintStart_toEndOf="@+id/logo1" />

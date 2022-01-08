@@ -13,13 +13,11 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dodrone.assemble.AssemblyMainActivity;
-import com.example.dodrone.controlling.CtrlMainActivity;
+import com.example.dodrone.classSel.ClassMainActivity;
 import com.example.dodrone.train.TrainMainActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -65,7 +63,7 @@ public class DoDroneActivity extends AppCompatActivity{
         classBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent assemIntent = new Intent(getApplicationContext(), AssemblyMainActivity.class);
+                Intent assemIntent = new Intent(getApplicationContext(), ClassMainActivity.class);
                 startActivity(assemIntent);
             }
         });

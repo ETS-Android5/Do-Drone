@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center|center_vertical"
     android:background="@color/background"
-    tools:context=".assemble.AssemblyMainActivity">
+    tools:context=".classSel.ClassMainActivity">
 
     <TextView
         android:id="@+id/thisisTrain"

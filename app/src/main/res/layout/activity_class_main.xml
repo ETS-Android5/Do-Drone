@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:layout_gravity="center|center_vertical"
     android:background="@color/background"
-    tools:context=".assemble.AssemblyMainActivity">
+    tools:context=".classSel.ClassMainActivity">
 
     <TextView
-        android:id="@+id/thisisAssem"
+        android:id="@+id/classSelTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/hyundai_m"
@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/thisisAssem"
+        app:layout_constraintTop_toBottomOf="@+id/classSelTitle"
         app:layout_goneMarginLeft="100dp">
 
         <LinearLayout
@@ -133,5 +133,18 @@
 
         </LinearLayout>
     </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/classMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/hyundai_l"
+        android:text="@string/classMsg"
+        android:textColor="@color/msg_colour"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/classSelTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

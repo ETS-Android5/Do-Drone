@@ -65,38 +65,9 @@
             android:name=".AboutActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".assemble.AssemblyMainActivity"
+            android:name=".classSel.ClassMainActivity"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".assemble.AssemStep1Activity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".assemble.AssemStep2Activity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".assemble.AssemStep3Activity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".assemble.AssemStep4Activity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".assemble.AssemStep5Activity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".train.TrainStep1Activity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".train.TrainStep2Activity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".train.TrainStep3Activity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".train.TrainStep4Activity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".train.TrainStep5Activity"
-            android:screenOrientation="landscape" />
+
     </application>
 
 </manifest>

@@ -46,6 +46,7 @@ public class MyPageActivity extends AppCompatActivity {
     ImageView character;
     Button logoutBtn;
     Button modifyBtn;
+    String watchedVid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,6 +127,24 @@ public class MyPageActivity extends AppCompatActivity {
             char_draw = getResources().getDrawable(R.drawable.tom_hat);
 
         return char_draw;
+    }
+
+    private void watchedVid(int status){
+        switch(status) {
+            case 0:
+                watchedVid = getResources().getString(R.string.class0);
+                break;
+            case 1:
+                watchedVid = getResources().getString(R.string.class1);
+                break;
+            case 2:
+                watchedVid = getResources().getString(R.string.class2);
+                break;
+            case 3:
+                watchedVid = getResources().getString(R.string.class3);
+                break;
+
+        }
     }
 
 }
