@@ -41,7 +41,7 @@
                 android:paddingBottom="10dp">
 
                 <LinearLayout
-                    android:id="@+id/assemBtn"
+                    android:id="@+id/classGroup"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center|center_horizontal"
@@ -51,27 +51,28 @@
                     android:orientation="vertical"
                     android:paddingTop="20dp">
 
-                    <ImageView
+                    <Button
+                        android:id="@+id/classBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="170dp"
                         android:layout_gravity="center"
-                        android:id="@+id/classImg"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:margin="30dp"
-                        app:srcCompat="@drawable/playbookwhite200" />
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/playbookwhite200"
+                        android:paddingTop="20dp" />
 
                     <TextView
                         android:id="@+id/classText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/DungGeunMo"
+                        android:fontFamily="@font/hyundai_m"
                         android:gravity="center"
                         android:text="수업 영상\n보러가기"
                         android:textColor="#FFFFFF"
-                        android:textSize="30sp" />
+                        android:textSize="35sp" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/trainBtn"
+                    android:id="@+id/guideGroup"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center|center_horizontal"
@@ -81,24 +82,23 @@
                     android:orientation="vertical"
                     android:paddingTop="20dp">
 
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:id="@+id/infoImg"
+                    <Button
+                        android:id="@+id/guideBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="180dp"
-                        android:padding="5dp"
-                        android:margin="30dp"
-                        app:srcCompat="@drawable/guidebookwhite200" />
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/guidebookwhite200" />
 
                     <TextView
                         android:id="@+id/infoText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/DungGeunMo"
+                        android:fontFamily="@font/hyundai_m"
                         android:gravity="center"
                         android:text="두드론\n사용 방법"
                         android:textColor="#FFFFFF"
-                        android:textSize="30sp" />
+                        android:textSize="35sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -119,11 +119,10 @@
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:layout_weight="1.5"
-                    android:alpha="0.7"
                     android:background="@drawable/strokebtn"
                     android:backgroundTint="#974316"
                     android:backgroundTintMode="screen"
-                    android:fontFamily="@font/DungGeunMo"
+                    android:fontFamily="@font/hyundai_m"
                     android:padding="10dp"
                     android:text="조종하기\nControl"
                     android:textSize="34sp" />
@@ -145,6 +144,29 @@
             app:srcCompat="@drawable/ic_baseline_menu_24"
             app:tint="#EFE1E1"
             tools:srcCompat="@drawable/ic_baseline_menu_24" />
+
+        <ImageView
+            android:id="@+id/logo1"
+            android:layout_width="320dp"
+            android:layout_height="111dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/hori_white" />
+
+        <TextView
+            android:id="@+id/logo2"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/hyundai_m"
+            android:text="by XXKD"
+            android:textColor="#DFDED8"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="@+id/logo1"
+            app:layout_constraintStart_toEndOf="@+id/logo1" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

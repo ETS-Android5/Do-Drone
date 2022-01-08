@@ -1,45 +1,33 @@
 package com.example.dodrone;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.example.dodrone.assemble.AssemblyMainActivity;
 import com.example.dodrone.controlling.CtrlMainActivity;
-import com.example.dodrone.DetectorActivity;
 import com.example.dodrone.train.TrainMainActivity;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import org.jetbrains.annotations.NotNull;
-
 public class DoDroneActivity extends AppCompatActivity{
 
-    Button assemBtn, trainBtn, ctrlBtn;
+    Button classBtn, guideBtn, ctrlBtn;
     ImageView profile_img;
     TextView profile_nick;
     String nickname;
@@ -70,11 +58,11 @@ public class DoDroneActivity extends AppCompatActivity{
         setContentView(R.layout.activity_do_drone);
         thisUser.retrieveUserInfoForDoDrone(currUser, thisUser.listener, userListener);
         Log.d("user-class", "intent val: "+stat);
-        assemBtn = findViewById(R.id.assemBtn);
-        trainBtn = findViewById(R.id.trainBtn);
+        classBtn = findViewById(R.id.classBtn);
+        guideBtn = findViewById(R.id.guideBtn);
         ctrlBtn = findViewById(R.id.ctrlBtn);
 
-        assemBtn.setOnClickListener(new View.OnClickListener() {
+        classBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent assemIntent = new Intent(getApplicationContext(), AssemblyMainActivity.class);
@@ -82,7 +70,7 @@ public class DoDroneActivity extends AppCompatActivity{
             }
         });
 
-        trainBtn.setOnClickListener(new View.OnClickListener() {
+        guideBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent trainIntent = new Intent(getApplicationContext(), TrainMainActivity.class);
@@ -191,7 +179,7 @@ public class DoDroneActivity extends AppCompatActivity{
                 Log.d("ctrl-alert", "ok clicked");
                 // 드론 연결 - 와이파이 선택 창
                 // 조종하기 page
-                Intent intent = new Intent(getApplicationContext(), CtrlMainActivity .class);
+                Intent intent = new Intent(getApplicationContext(), CtrlWebviewActivity .class);
                 startActivity(intent);
             }
         });

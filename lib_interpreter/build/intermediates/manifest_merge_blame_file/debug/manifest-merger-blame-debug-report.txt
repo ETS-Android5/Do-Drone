@@ -4,8 +4,8 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="21"
-6-->/Users/rayun/AndroidStudioProjects/DoDrone/lib_interpreter/src/main/AndroidManifest.xml
+6-->C:\AndroidProject\do-drone-wtf\lib_interpreter\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="30" />
-7-->/Users/rayun/AndroidStudioProjects/DoDrone/lib_interpreter/src/main/AndroidManifest.xml
+7-->C:\AndroidProject\do-drone-wtf\lib_interpreter\src\main\AndroidManifest.xml
 8
 9</manifest>

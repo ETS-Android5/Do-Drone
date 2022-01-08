@@ -9,8 +9,5 @@
         android:fontWeight="400"
         android:font="@font/hyundai_m"/>
 
-    <font android:fontStyle="normal"
-        android:fontWeight="400"
-        android:font="@font/DungGeunMo"/>
 
 </font-family>
